@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Analytics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            border-bottom: 1px solid #d4d4d4;
+        }
+
+        .footer-dark {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+
+        .section-heading {
+            padding: 20px 0;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            height: 400px;
+            width: 100%;
+        }
+
+        .chart-description {
+            text-align: center;
+            margin: 20px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">Customer Hotspot Tracking</a>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Analytics</h1>
+        <form action="/page2" method="post" class="text-center">
+            <label for="region">Select Region:</label>
+            <select name="region" id="region" class="form-control w-25 mx-auto mb-3" onchange="changeRegion()">
+                <option value="Region1">Region 1</option>
+                <option value="Region2">Region 2</option>
+                <option value="Region3">Region 3</option>
+            </select>
+            <button type="submit" class="btn btn-success">Analyze</button>
+        </form>
+        {% if region %}
+        <h2 class="text-center mt-5">Analysis for {{ region }}</h2>
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+        <p class="chart-description">Line chart showing the growth in business after implementing customer hotspot tracking in {{ region }}.</p>
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+        <p class="chart-description">Bar chart representing different analytical aspects of the business in {{ region }}.</p>
+        {% endif %}
+        <a href="/" class="btn btn-secondary d-block mx-auto mt-3">Back to Information Page</a>
+    </div>
+
+    <footer class="footer-dark text-center">
+        <div class="container">
+            <p>Company Name</p>
+            <p>Address: 123 Main Street, City, Country</p>
+            <p>Email: info@company.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+
+    <script>
+        function changeRegion() {
+            var region = document.getElementById('region').value;
+
+            // Update data for line and bar charts based on selected region
+            updateLineChartData(region);
+            updateBarChartData(region);
+        }
+
+        function updateLineChartData(region) {
+            // Update line chart data based on selected region
+            // Example data shown here, please update accordingly
+            var data = {
+                labels: ['January', 'February', 'March', 'April', 'May'],
+                datasets: [{
+                    label: 'Business Growth in ' + region,
+                    data: [10, 20, 30, 40, 50],
+                    borderColor: 'blue',
+                    fill: false
+                }]
+            };
+            var ctxLine = document.getElementById('lineChart').getContext('2d');
+            var lineChart = new Chart(ctxLine, {
+                type: 'line',
+                data: data
+            });
+        }
+
+        function updateBarChartData(region) {
+            // Update bar chart data based on selected region
+            // Example data shown here, please update accordingly
+            var data = {
+                labels: ['Metric1', 'Metric2', 'Metric3'],
+                datasets: [{
+                    label: 'Business Metrics in ' + region,
+                    data: [30, 50, 20],
+                    backgroundColor: ['red', 'green', 'blue']
+                }]
+            };
+            var ctxBar = document.getElementById('barChart').getContext('2d');
+            var barChart = new Chart(ctxBar, {
+                type: 'bar',
+                data: data
+            });
+        }
+
+        // Initial call to set up the charts for the default region
+        changeRegion();
+    </script>
+</body>
+
+</html>

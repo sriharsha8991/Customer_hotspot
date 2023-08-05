@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Hotspot Tracking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            border-bottom: 1px solid #d4d4d4;
+        }
+        .custom-img,
+        .img-fluid {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        .custom-img:hover,
+        .img-fluid:hover {
+            transform: scale(1.15);
+        }
+        .custom-cursor-image {
+            cursor: url('path-to-your-map-locator-icon.png'), auto;
+        }
+        .footer-dark {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        .card {
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: transform .2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">Customer Hotspot Tracking</a>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Explore Customer Hotspot Tracking</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='hotspot.jpg') }}" class="card-img-top custom-img" alt="Hotspot Tracking">
+                    <div class="card-body">
+                        <h5 class="card-title">What is Customer Hotspot Tracking?</h5>
+                        <p class="card-text">Customer Hotspot Tracking is a technology that helps businesses analyze customer behavior, preferences, and movement patterns in specific locations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='Data_privacy.png') }}" class="card-img-top custom-img" alt="Data Privacy">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Privacy</h5>
+                        <p class="card-text">We prioritize data privacy, ensuring that all collected data is anonymized and handled with utmost security and compliance with privacy laws.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='Business.jpg') }}" class="card-img-top custom-img" alt="Business Benefits">
+                    <div class="card-body">
+                        <h5 class="card-title">How it Helps Businesses</h5>
+                        <p class="card-text">Hotspot tracking offers insights into customer behavior, enabling businesses to optimize services, improve marketing strategies, and enhance customer experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='Technology.png') }}" class="card-img-top custom-img" alt="Technological Changes">
+                    <div class="card-body">
+                        <h5 class="card-title">Technological Changes</h5>
+                        <p class="card-text">By integrating the latest technologies, customer hotspot tracking continues to evolve, offering more precise and actionable insights for businesses of all sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/page2" class="btn btn-primary d-block mx-auto mt-5">Explore Analytical Page</a>
+    </div>
+    <!-- Existing HTML Code Above -->
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h4>How It Works</h4>
+        <p>Customer hotspot tracking often relies on Wi-Fi, Bluetooth, and GPS technologies. By tracking the signals from customers' mobile devices...</p>
+        <ul>
+            <li>Tracking signals from customers' devices</li>
+            <li>Analysis of time spent in different areas</li>
+            <li>Understanding how customers interact with products</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='Business.jpg') }}" class="img-fluid" alt="How It Works">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='benefits.jpg') }}" class="img-fluid" alt="Benefits to Businesses">
+    </div>
+    <div class="col-md-6">
+        <h4>Benefits to Businesses</h4>
+        <p>Improved Layout Design, Personalized Marketing, Optimized Staffing, Enhanced Customer Experience...</p>
+        <ul>
+            <li><strong>Improved Layout Design:</strong> Encourage more interaction with key products, streamline traffic flow.</li>
+            <li><strong>Personalized Marketing:</strong> Targeted strategies, sending personalized offers.</li>
+            <li><strong>Optimized Staffing:</strong> Adequate staffing during peak times, understanding customer flow.</li>
+            <li><strong>Enhanced Customer Experience:</strong> Tailor the shopping experience for satisfaction, loyalty programs.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h4>Data Privacy Considerations</h4>
+        <p>With the tracking of personal devices comes the responsibility to handle that data with care. Privacy concerns are paramount...</p>
+        <ul>
+            <li>Handle data with care and integrity</li>
+            <li>Compliance with privacy laws and regulations</li>
+            <li>Anonymizing data to protect identities</li>
+            <li>Clear opt-in/opt-out options for customers</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='data_privacy2.jpg') }}" class="img-fluid" alt="Data Privacy Considerations">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='integration.jpg') }}" class="img-fluid" alt="Integration with Other Technologies">
+    </div>
+    <div class="col-md-6">
+        <h4>Integration with Other Technologies</h4>
+        <p>Customer hotspot tracking can be integrated with other technologies like Point of Sale (POS) systems, customer relationship management (CRM) tools...</p>
+        <ul>
+            <li>Integration with POS systems</li>
+            <li>Connection to CRM tools for comprehensive customer analysis</li>
+            <li>Online analytics to combine in-store and online behavior</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h4>Real-world Applications</h4>
+        <p>Various industries can benefit from hotspot tracking, not just retail. For example, museums and galleries might use it to understand which exhibits attract the most attention...</p>
+        <ul>
+            <li>Integration with POS systems</li>
+            <li>Connection to CRM tools for comprehensive customer analysis</li>
+            <li>Online analytics to combine in-store and online behavior</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <img src="{{ url_for('static', filename='real_world.jpeg') }}" class="img-fluid" alt="Real-world Applications">
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+<!-- Existing HTML Code Below -->
+
+    <footer class="footer-dark text-center">
+        <div class="container">
+            <p>Company Name</p>
+            <p>Address: 123 Main Street, City, Country</p>
+            <p>Email: info@company.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </footer>
+</body>
+</html>
